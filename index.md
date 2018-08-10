@@ -1,7 +1,3 @@
-# index
-
-
-
 # 2018-08 Data Organization in Spreadsheets Lesson notes
 
 from [Data Caprentry lesson](http://datacarpentry.org/spreadsheet-ecology-lesson)
