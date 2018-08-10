@@ -1,15 +1,15 @@
 # 03-data-org-dates-notes
 
-## Dates as Date
+## Dates as Data
 Let's talk about dates and date formatting in spreadsheets:
 
-Dates in spreadsheets are stored in a single column. 
+Dates in spreadsheets are stored in a single column.
 
-While this seems the most natural way to record dates, it actually is not best practice. 
+While this seems the most natural way to record dates, it actually is not best practice.
 
 A spreadsheet application will display the dates in a seemingly correct way (to a human observer) but how it actually handles and stores the dates may be problematic.
 
-In particular, please remember that functions that are valid for a given spreadsheet program (be it LibreOffice, Microsoft Excel, OpenOffice, Gnumeric, etc.) are usually guaranteed to be compatible only within the same family of products. 
+In particular, please remember that functions that are valid for a given spreadsheet program (be it LibreOffice, Microsoft Excel, OpenOffice, Gnumeric, etc.) are usually guaranteed to be compatible only within the same family of products.
 
 If you will later need to export the data and need to conserve the timestamps, you are better off handling them using one of the solutions discussed below.
 
@@ -42,15 +42,15 @@ add columns to cleaned spreadsheet tab
 **read exercise instructions**
 
 > **show and explain time eextractions**
-> 
+>
 
 
 ### Preferred date format
 It is much safer to store dates with ``YEAR, MONTH, DAY`` in separate columns or as ``YEAR and DAY-OF-YEAR`` in separate columns.
 
 ***Excel Note:***
-***Excel is unable to parse dates from before ``1899-12-31``, and will thus leave these untouched. 
-If you’re mixing historic data from before and after this date, Excel will translate only the post-1900 dates into its internal format, thus resulting in mixed data. 
+***Excel is unable to parse dates from before ``1899-12-31``, and will thus leave these untouched.
+If you’re mixing historic data from before and after this date, Excel will translate only the post-1900 dates into its internal format, thus resulting in mixed data.
 If you’re working with historic data, be extremely careful with your dates!***
 
 ***Excel's second date system:
@@ -62,20 +62,20 @@ Spreadsheet programs have numerous “useful features” which allow them to han
 
 > **Show date examples screencap**
 
-* keep in mind, these spreadsheet “features” often allow ambiguity to creep into your data. 
+* keep in mind, these spreadsheet “features” often allow ambiguity to creep into your data.
 * Ideally, data should be as unambiguous as possible.
 
-### Dates stored as integers 
+### Dates stored as integers
 
-* The first thing you need to know is that Excel stores dates as numbers - see the last column in the above figure. 
+* The first thing you need to know is that Excel stores dates as numbers - see the last column in the above figure.
 
 * Essentially, it counts the days from a default of ``December 31, 1899``, and thus stores ``July 2, 2014 as the serial number 41822``.
 
 (But wait. That’s the default on my version of Excel. We’ll get into how this can introduce problems down the line later in this lesson. )
 
-* This serial number thing can actually be useful in some circumstances. 
-* By using the above functions we can easily add days, months or years to a given date. 
-* Say you had a sampling plan where you needed to sample every thirty seven days. 
+* This serial number thing can actually be useful in some circumstances.
+* By using the above functions we can easily add days, months or years to a given date.
+* Say you had a sampling plan where you needed to sample every thirty seven days.
 * In another cell, you could type the formula:
 
 **goto excel date tab and demonstrate:**
@@ -87,8 +87,8 @@ and it would return
 8-Aug  #or 37 days added to orig date
 ```
 
-* Excel understands the date as a number ``41822``, and ``41822 + 37 = 41859`` which it interprets as ``August 8, 2014``. 
-* It retains the format (for the most part) of the cell that is being operated upon, (unless you did some sort of formatting to the cell before, and then all bets are off). 
+* Excel understands the date as a number ``41822``, and ``41822 + 37 = 41859`` which it interprets as ``August 8, 2014``.
+* It retains the format (for the most part) of the cell that is being operated upon, (unless you did some sort of formatting to the cell before, and then all bets are off).
 * Month and year rollovers are internally tracked and applied.
 
 ***Note:***
@@ -100,10 +100,10 @@ To do that:
 * Finally the complete date string is reconstructed using the ``DATE()`` function.
 
 As for dates, times are handled in a similar way
-* ``seconds`` can be directly added 
+* ``seconds`` can be directly added
 * but to add ``hour and minutes`` we need to make sure that we are adding the quantities to the correct entities.
 
-Which brings us to the many different ways Excel provides in how it displays dates. 
+Which brings us to the many different ways Excel provides in how it displays dates.
 
 If you refer to the figure (date-formats)
 * you’ll see that there are many ways that ambiguity creeps into your data depending on the format you chose when you enter your data
@@ -121,7 +121,7 @@ Saving dates tab as CSV format and reopening in texte ditor.
 > **show solution/outcome**
 
 ***Note:***
-**You will notice that when exporting into a text-based format (such as CSV), Excel will export its internal date integer instead of a useful value (that is, the dates will be represented as integer numbers). 
+**You will notice that when exporting into a text-based format (such as CSV), Excel will export its internal date integer instead of a useful value (that is, the dates will be represented as integer numbers).
 This can potentially lead to problems if you use other software to manipulate the file.**
 
 ### Advantages of Alternative Date Formatting
@@ -133,9 +133,9 @@ Storing dates in YEAR, MONTH, DAY format helps remove this ambiguity. Let’s lo
 For instance this is a spreadsheet representing insect counts that were taken every few days over the summer, and things went something like this:
 
 > **show screencap insect counts**
-> 
+>
 
-If Excel was to be believed, this person had been collecting bugs in the future. 
+If Excel was to be believed, this person had been collecting bugs in the future.
 
 Now, we have no doubt this person is highly capable, but I believe time travel was beyond even their grasp.
 
@@ -146,22 +146,22 @@ Now, we have no doubt this person is highly capable, but I believe time travel w
 
 ### Storing dates as YEAR, DAY-OF-YEAR
 
-There is also another option. 
+There is also another option.
 * You can also store dates as year and day of year (DOY). Why? Because depending on your question, this might be what’s useful to you, and there is practically no possibility for ambiguity creeping in.
 
 * Statistical models often incorporate year as a factor, or a categorical variable, rather than a numeric variable, to account for year-to-year variation, and DOY can be used to measure the passage of time within a year.
 
-* Can you convert all your dates into DOY format? 
+* Can you convert all your dates into DOY format?
 
 In Excel, here’s a useful guide:
 
 > **show screencap DOY**
-> 
+>
 
 
 ### Storing dates as a single string
 
-* Another alternative could be to convert the date string into a single string using the ``YYYYMMDDhhmmss`` format. 
+* Another alternative could be to convert the date string into a single string using the ``YYYYMMDDhhmmss`` format.
 
 For example the date ``March 24, 2015 17:25:35`` would become ``20150324172535``, where:
 
@@ -176,6 +176,3 @@ Such strings will be correctly sorted in ascending or descending order, and by k
 
 #### Key Lesson points:
 * Treating dates as multiple pieces of data rather than one makes them easier to handle.
-
-
-
