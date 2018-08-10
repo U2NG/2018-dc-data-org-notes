@@ -1,14 +1,14 @@
-# Index
+# index
 
 
 
-2018-08 Data Organization in Spreadsheets Lesson notes
+# 2018-08 Data Organization in Spreadsheets Lesson notes
 
-from [Data Caprentry lesson](http://datacarpentry.org/spreadsheet-ecology-lesson/_)
+from [Data Caprentry lesson](http://datacarpentry.org/spreadsheet-ecology-lesson)
 
-1. [Introduction]()	
-2. [Formatting data tables in Spreadsheets]()	
-3. [Formatting problems]()	
-4. [Dates as data]()	
-5. [Quality control]()	
-6. [Exporting data]()
+0. [Introduction](https://github.com/U2NG/2018-dc-data-org-notes/blob/master/00-data-org-introduction-notes.html)	
+1. [Formatting data tables in Spreadsheets](https://github.com/U2NG/2018-dc-data-org-notes/blob/master/01-formatting-data-tables-notes.html)	
+2. [Formatting problems](https://github.com/U2NG/2018-dc-data-org-notes/blob/master/02-data-org-formatting-probs-notes.html)	
+3. [Dates as data](https://github.com/U2NG/2018-dc-data-org-notes/blob/master/03-data-org-dates-notes.html)	
+4. [Quality control](https://github.com/U2NG/2018-dc-data-org-notes/blob/master/04-data-org-quality-control-notes.html)	
+5. [Exporting data](https://github.com/U2NG/2018-dc-data-org-notes/blob/master/05-data-org-exporting-notes.html)
